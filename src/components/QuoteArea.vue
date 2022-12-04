@@ -113,7 +113,7 @@ export default defineComponent({
 }
 
 .quote__author {
-  margin: 50px auto;
+  margin: 50px auto 100px;
   width: 50%;
   text-align: right;
   font-size: 40px;

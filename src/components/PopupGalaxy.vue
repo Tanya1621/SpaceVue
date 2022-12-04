@@ -3,10 +3,18 @@
     <div class="popup">
       <button class="popup__button" @click="$emit('closePopup')" >Close</button>
       <div class="popup__galaxy">
-      <h1 class="popup__name">{{ galaxy.name }}</h1>
-      <p class="popup__text">Distance: {{ galaxy.distance }}</p>
-      <p class="popup__text">Diameter: {{ galaxy.radius }} </p>
-      <p class="popup__text">Description: {{galaxy.description}}</p>
+      <h1 class="popup__name">{{ item.name }}</h1>
+        <div v-if="isGalaxy">
+      <p class="popup__text">Distance: {{ item.distance }}</p>
+      <p class="popup__text">Diameter: {{ item.radius }} </p>
+      <p class="popup__text">Description: {{item.description}}</p>
+        </div>
+        <div v-else>
+          <p class="popup__text">Mass: {{ item.mass }}</p>
+          <p class="popup__text">Type: {{ item.type }} </p>
+          <p class="popup__text">Distance: {{item.distance}}</p>
+          <p class="popup__text">Description: {{item.description}}</p>
+        </div>
     </div>
     </div>
 
@@ -18,9 +26,13 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   props: {
-    galaxy: {
+    item: {
       required: true,
       type: Object,
+    },
+    isGalaxy: {
+      required: true,
+      type: Boolean,
     }
   },
   name: "PopupGalaxy",
@@ -28,6 +40,23 @@ export default defineComponent({
 </script>
 
 <style scoped>
+@keyframes animation {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 1200px;
+  }
+}
+
+@keyframes text{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .overlay {
   width: 100vw;
   height: 100vh;
@@ -47,8 +76,9 @@ export default defineComponent({
   box-shadow: 0px 0px 12px 0px rgb(98, 94, 98);
   border-radius: 10px;
   position: relative;
-  padding: 50px;
-  box-sizing: border-box;
+  max-height: 0;
+  box-sizing: content-box;
+  animation: animation 3s ease forwards;
 }
 
 .popup__button {
@@ -71,7 +101,12 @@ export default defineComponent({
 .popup__name {
   font-size: 50px;
   text-align: center;
-  margin: 0 0 20px;
+  width: 80%;
+  margin: 50px auto 20px;
+  opacity: 0;
+  animation: text 1s 1s ease forwards;
+  border-bottom: solid 1px rgba(255,255,255, .3);
+  padding-bottom: 20px;
 }
 
 .popup__button:hover {
@@ -79,6 +114,13 @@ export default defineComponent({
 }
 
 .popup__text {
+  margin: 20px 50px 20px 50px;
   font-size: 40px;
+  opacity: 0;
+  animation: text 1s 1s ease forwards;
+}
+
+.popup__text:last-of-type {
+  margin-bottom: 50px;
 }
 </style>
