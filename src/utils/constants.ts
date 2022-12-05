@@ -7,35 +7,35 @@ import alpheratz from '@/assets/alpheratz.jpeg';
 import titawin from '@/assets/titawin.jpeg';
 import almach from '@/assets/almach.jpeg';
 import mirach from '@/assets/Mirach.jpeg';
-import aldebaran from '@/assets/Aldebaran.jpeg'
+import aldebaran from '@/assets/Aldebaran.jpeg';
+import aries from '@/assets/aries.webp'
 
 export const galaxyList: IGalaxy[] = [
   {
     name: "Andromeda",
-    distance: "2.5 million light-years",
+    stars: 65,
     description:
       "Andromeda is one of the 48 constellations listed by the 2nd-century Greco-Roman astronomer Ptolemy, and one of the 88 modern constellations. Located in the northern celestial hemisphere, it is named for Andromeda, daughter of Cassiopeia, in the Greek myth, who was chained to a rock to be eaten by the sea monster Cetus.",
-    radius: "46.56 kilo parsecs",
+    symbol: "Andromeda, the Chained woman",
     id: 1,
     img: andromeda,
   },
   {
     name: "Taurus",
-    distance: "Current location",
+    stars: 132,
     description:
       "Taurus is one of the constellations of the zodiac and is located in the northern celestial hemisphere. Taurus is a large and prominent constellation in the Northern Hemisphere's winter sky. It is one of the oldest constellations, dating back to the Early Bronze Age at least, when it marked the location of the Sun during the spring equinox.",
-    radius: "26.8 kilo parsecs",
+    symbol: "The Bull",
     id: 2,
     img: taurus,
   },
   {
-    name: "Triangulum",
-    distance: "3.2 million light-years",
-    description:
-      "The Triangulum Galaxy is the third-largest member of the Local Group of galaxies, behind the Andromeda Galaxy and the Milky Way. It is one of the most distant permanent objects that can be viewed with the naked eye",
-    radius: "18.74 kilo parsecs",
+    name: "Aries",
+    stars: 61,
+    description: "The name Aries is Latin for ram. Its old astronomical symbol is Aries symbol. It is one of the 48 constellations described by the 2nd century astronomer Ptolemy, and remains one of the 88 modern constellations.",
+    symbol: "The Ram",
     id: 3,
-    img: triangulum,
+    img: aries,
   },
 ];
 

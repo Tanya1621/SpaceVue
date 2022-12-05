@@ -5,8 +5,8 @@
       <div class="popup__galaxy">
       <h1 class="popup__name">{{ item.name }}</h1>
         <div v-if="isGalaxy">
-      <p class="popup__text">Distance: {{ item.distance }}</p>
-      <p class="popup__text">Diameter: {{ item.radius }} </p>
+      <p class="popup__text">Number of stars: {{ item.stars }}</p>
+      <p class="popup__text">Symbolism: {{ item.symbol }} </p>
       <p class="popup__text">Description: {{item.description}}</p>
         </div>
         <div v-else>

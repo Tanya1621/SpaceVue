@@ -1,8 +1,8 @@
 interface IGalaxy {
   name: string;
-  distance: string;
+  stars: number;
   description: string;
-  radius: string;
+  symbol: string;
   id: number;
   img: string;
 }
