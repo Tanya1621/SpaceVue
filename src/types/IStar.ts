@@ -1,10 +1,8 @@
-interface IStar {
-    id: number;
-    name: string;
+import type ISpaceItem from "@/types/ISpaceItem";
+
+interface IStar extends ISpaceItem{
     mass: string;
-    type: string;
-    description: string;
-    img: string;
+    location: string;
     distance: string;
 }
 

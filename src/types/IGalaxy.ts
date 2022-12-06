@@ -1,11 +1,8 @@
-interface ISpaceItem {
-  name: string;
-  stars: number;
-  description: string;
-  symbol: string;
-  id: number;
-  img: string;
+import type ISpaceItem from "@/types/ISpaceItem";
+
+interface IGalaxy extends ISpaceItem {
+    distance: string,
+    radius: string,
 }
 
-export default ISpaceItem;
-
+export default IGalaxy;

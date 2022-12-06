@@ -1,51 +1,69 @@
 <template>
-<section>
-  <h2 class="stars__heading">Choose your star</h2>
-  <ul class="stars__list">
-    <StarItem v-for="star in stars"  :key="star.id" :star="star" :chosenStar="chosenStar" @chooseStar="chooseStar" @openPopup="openPopup"/>
-  </ul>
+  <section>
+    <h2 class="stars__heading">Choose your star</h2>
+    <ul class="stars__list">
+      <GalleryItem
+        v-for="star in stars"
+        :key="star.id"
+        :item="star"
+        :isMain="false"
+        :chosenItem="chosenStar"
+        @chooseItem="chooseStar"
+        @openPopup="openPopup"
+      />
+    </ul>
   </section>
   <PopupInfo
-      @closePopup="closePopup"
-      v-if="opened"
-      :item="current"
-      :opened="opened"
-      :isGalaxy="false"
+    @closePopup="closePopup"
+    v-if="opened"
+    :item="current"
+    :opened="opened"
+    :isGalaxy="false"
   />
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from "vue";
-import {andromedaStars} from "@/utils/constants";
+import { defineComponent, ref } from "vue";
+import { andromedaStars } from "@/utils/constants";
 import type IStar from "@/types/IStar";
-import StarItem from "@/components/StarItem.vue";
-import {milkyWayStars} from "@/utils/constants";
-import {triangulumStars} from "@/utils/constants";
+import { galaxiesList } from "@/utils/constants";
+import { triangulumStars } from "@/utils/constants";
 import PopupInfo from "@/components/Popup.vue";
+import GalleryItem from "@/components/GalleryItem.vue";
 export default defineComponent({
-  components: {StarItem, PopupInfo},
+  components: { GalleryItem, PopupInfo },
   props: {
-    chosenGalaxy: {
+    chosenItem: {
       required: true,
       type: Number,
-    }
+    },
   },
   name: "StarsList",
   data() {
     let opened: boolean = false;
     let chosenStar: any = [];
     let current = ref<IStar | undefined>(undefined);
-    let stars = this.chosenGalaxy === 1? andromedaStars : this.chosenGalaxy === 2? milkyWayStars : triangulumStars;
+    let stars =
+      this.chosenItem === 1
+        ? andromedaStars
+        : this.chosenItem === 2
+        ? galaxiesList
+        : triangulumStars;
     return { opened, current, chosenStar, stars };
   },
   watch: {
-    chosenGalaxy: function () {
-      this.stars = this.chosenGalaxy === 1? andromedaStars : this.chosenGalaxy === 2? milkyWayStars : triangulumStars;
-    }
+    chosenItem: function () {
+      this.stars =
+        this.chosenItem === 1
+          ? andromedaStars
+          : this.chosenItem === 2
+          ? galaxiesList
+          : triangulumStars;
+    },
   },
   methods: {
     openPopup(id: number) {
-      console.log('ready');
+      console.log("ready");
       this.current = this.stars.find((el) => el.id === id);
       this.opened = true;
     },
@@ -55,12 +73,12 @@ export default defineComponent({
     },
     chooseStar(id: number) {
       const index = this.chosenStar.indexOf(id);
-      if(this.chosenStar.indexOf(id) !== -1) {
-        this.chosenStar.splice(index, 1)
+      if (this.chosenStar.indexOf(id) !== -1) {
+        this.chosenStar.splice(index, 1);
       } else {
         this.chosenStar.push(id);
       }
-    }
+    },
   },
 });
 </script>

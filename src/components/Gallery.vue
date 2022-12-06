@@ -1,8 +1,16 @@
 <template>
   <section class="galaxies">
-    <h2 class="galaxies__heading">Choose your constellation</h2>
+    <h2 class="galaxies__heading">What are you interesting in?</h2>
     <ul class="galaxy__list">
-      <GalaxyItem v-for="galaxy in galaxies" :key="galaxy.id" :galaxy="galaxy" @openPopup="openPopup" @chooseGalaxy="chooseGalaxy" :chosenGalaxy="chosenGalaxy"/>
+      <GalleryItem
+        v-for="item in galaxies"
+        :key="item.id"
+        :item="item"
+        @openPopup="openPopup"
+        @chooseItem="chooseSpaceItem"
+        :chosenItem="chosenItem"
+        :isMain="true"
+      />
     </ul>
   </section>
   <PopupInfo
@@ -12,26 +20,26 @@
     :opened="opened"
     :isGalaxy="true"
   />
-  <StarsList v-if="chosenGalaxy" :chosenGalaxy="chosenGalaxy"/>
+  <StarsList v-if="chosenItem" :chosenItem="chosenItem" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ref } from "vue";
-import type IGalaxy from "../types/IGalaxy";
+import type ISpaceItem from "../types/ISpaceItem";
 import PopupInfo from "@/components/Popup.vue";
-import GalaxyItem from "@/components/GalaxyItem.vue";
-import {spaceList} from "@/utils/constants";
+import GalleryItem from "@/components/GalleryItem.vue";
+import { spaceList } from "@/utils/constants";
 import StarsList from "@/components/StarsList.vue";
 
 export default defineComponent({
   name: "Space-gallery",
-  components: {GalaxyItem, PopupInfo, StarsList },
+  components: { GalleryItem, PopupInfo, StarsList },
   data() {
     let opened: boolean = false;
-    let chosenGalaxy: number = 0;
-    let current = ref<IGalaxy | undefined>(undefined);
-    return { opened, current, chosenGalaxy };
+    let chosenItem: number = 0;
+    let current = ref<ISpaceItem | undefined>(undefined);
+    return { opened, current, chosenItem: chosenItem };
   },
   setup() {
     const galaxies = spaceList;
@@ -46,10 +54,9 @@ export default defineComponent({
       this.opened = false;
       this.current = undefined;
     },
-    chooseGalaxy(id: number) {
-      this.chosenGalaxy = id;
-      console.log(this.chosenGalaxy);
-    }
+    chooseSpaceItem(id: number) {
+      this.chosenItem = id;
+    },
   },
 });
 </script>
@@ -71,6 +78,4 @@ export default defineComponent({
   justify-content: center;
   gap: 50px;
 }
-
-
 </style>

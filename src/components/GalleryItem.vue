@@ -1,12 +1,21 @@
 <template>
   <li>
-  <div class="galaxy__item" @click="$emit('openPopup',galaxy.id)">
-    <img class="galaxy__image" :src="galaxy.img" :alt="galaxy.name" />
-    <button class="galaxy__button">i</button>
-  </div>
-    <div class="galaxy__capture">
-    <p class="galaxy__name">{{ galaxy.name.toUpperCase() }}</p>
-    <button :class="chosenGalaxy === galaxy.id? 'galaxy__button galaxy__button_add added' : 'galaxy__button galaxy__button_add'" @click="$emit('chooseGalaxy', galaxy.id)">{{chosenGalaxy === galaxy.id? '&#10003;' : '+'}}</button>
+    <div class="gallery__item" @click="$emit('openPopup', item.id)">
+      <img class="gallery__image" :src="item.img" :alt="item.name" />
+      <button class="gallery__button">i</button>
+    </div>
+    <div class="gallery__capture">
+      <p class="gallery__name">{{ item.name.toUpperCase() }}</p>
+      <button v-if="isMain"
+        :class="
+          chosenItem === item.id
+            ? 'gallery__button gallery__button_add added'
+            : 'gallery__button gallery__button_add'
+        "
+        @click="$emit('chooseItem', item.id)"
+      >
+        {{ chosenItem === item.id ? "&#10003;" : "+" }}
+      </button>
     </div>
   </li>
 </template>
@@ -14,21 +23,24 @@
 <script>
 export default {
   props: {
-    galaxy: {
+    isMain: {
+      required: true,
+      type: Boolean,
+    },
+    item: {
       required: true,
       type: Object,
     },
-    chosenGalaxy: {
+    chosenItem: {
       required: true,
-      type: Number,
-    }
+    },
   },
-  name: "GalaxyItem",
+  name: "GalleryItem",
 };
 </script>
 
 <style scoped>
-.galaxy__item {
+.gallery__item {
   width: 600px;
   height: 400px;
   background-color: transparent;
@@ -36,8 +48,7 @@ export default {
   position: relative;
 }
 
-
-.galaxy__image {
+.gallery__image {
   width: 100%;
   height: 100%;
   position: relative;
@@ -46,24 +57,24 @@ export default {
   object-fit: cover;
 }
 
-.galaxy__image:hover {
+.gallery__image:hover {
   transform: scale(1.2);
 }
 
-.galaxy__name {
+.gallery__name {
   font-size: 44px;
   margin: 0;
   position: relative;
   text-align: center;
 }
 
-.galaxy__button {
+.gallery__button {
   border: none;
   box-shadow: inset 0px 0px 18px 4px rgba(12, 91, 133, 1);
   background-color: rgba(116, 143, 215, 0.4);
   color: white;
   font-size: 30px;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
   cursor: pointer;
   font-family: "Audiowide", cursive;
   border-radius: 50%;
@@ -75,17 +86,17 @@ export default {
   height: 50px;
 }
 
-.galaxy__button_add {
-position: static;
+.gallery__button_add {
+  position: static;
 }
 .added {
   background-color: green;
 }
 
-.galaxy__button:hover {
-  opacity: .7;
+.gallery__button:hover {
+  opacity: 0.7;
 }
-.galaxy__capture {
+.gallery__capture {
   display: flex;
   justify-content: center;
   align-items: center;

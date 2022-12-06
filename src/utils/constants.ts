@@ -1,39 +1,43 @@
-import andromeda from "@/assets/Andromeda.png";
-import taurus from "@/assets/taurus.jpeg";
+import andromeda from "@/assets/andromeda.jpeg";
+import milkyway from "@/assets/milkyway.jpeg";
 import triangulum from "@/assets/Triangulum_Galaxy.jpeg";
-import type IGalaxy from "@/types/IGalaxy";
+import type ISpaceItem from "@/types/ISpaceItem";
 import type IStar from "@/types/IStar";
-import alpheratz from '@/assets/alpheratz.jpeg';
-import titawin from '@/assets/titawin.jpeg';
-import almach from '@/assets/almach.jpeg';
-import mirach from '@/assets/Mirach.jpeg';
-import aldebaran from '@/assets/Aldebaran.jpeg';
-import aries from '@/assets/aries.webp'
+import alpheratz from "@/assets/alpheratz.jpeg";
+import titawin from "@/assets/titawin.jpeg";
+import almach from "@/assets/almach.jpeg";
+import mirach from "@/assets/Mirach.jpeg";
+import aldebaran from "@/assets/Aldebaran.jpeg";
+import aries from "@/assets/aries.webp";
+import blackHoles from "@/assets/black_holes.jpeg";
+import saggitarius from "@/assets/saggitarius.jpeg";
+import m87 from "@/assets/m87.jpg";
+import henize from "@/assets/henize.jpg";
+import gnz7q from "@/assets/GNz7q.jpeg";
+import grs from "@/assets/grs.jpeg";
+import galaxies from "@/assets/galaxies.jpeg";
+import type IGalaxy from "@/types/IGalaxy";
+import eso from '@/assets/eso.jpg'
 
-export const spaceList: IGalaxy[] = [
+export const spaceList: ISpaceItem[] = [
   {
-    name: "Andromeda",
-    stars: 65,
+    name: "Black Holes",
     description:
-      "Andromeda is one of the 48 constellations listed by the 2nd-century Greco-Roman astronomer Ptolemy, and one of the 88 modern constellations. Located in the northern celestial hemisphere, it is named for Andromeda, daughter of Cassiopeia, in the Greek myth, who was chained to a rock to be eaten by the sea monster Cetus.",
-    symbol: "Andromeda, the Chained woman",
+      "A black hole is a place in space where gravity pulls so much that even light can not get out. The gravity is so strong because matter has been squeezed into a tiny space. This can happen when a star is dying. Because no light can get out, people can't see black holes. They are invisible. Space telescopes with special tools can help find black holes. The special tools can see how stars that are very close to black holes act differently than other stars.",
     id: 1,
-    img: andromeda,
+    img: blackHoles,
   },
   {
-    name: "Taurus",
-    stars: 132,
+    name: "Galaxies",
     description:
-      "Taurus is one of the constellations of the zodiac and is located in the northern celestial hemisphere. Taurus is a large and prominent constellation in the Northern Hemisphere's winter sky. It is one of the oldest constellations, dating back to the Early Bronze Age at least, when it marked the location of the Sun during the spring equinox.",
-    symbol: "The Bull",
+      "A galaxy is a system of stars, stellar remnants, interstellar gas, dust, dark matter, bound together by gravity. Some scientists think there could be as many as one hundred billion galaxies in the universe.",
     id: 2,
-    img: taurus,
+    img: galaxies,
   },
   {
     name: "Aries",
-    stars: 61,
-    description: "The name Aries is Latin for ram. Its old astronomical symbol is Aries symbol. It is one of the 48 constellations described by the 2nd century astronomer Ptolemy, and remains one of the 88 modern constellations.",
-    symbol: "The Ram",
+    description:
+      "The name Aries is Latin for ram. Its old astronomical symbol is Aries symbol. It is one of the 48 constellations described by the 2nd century astronomer Ptolemy, and remains one of the 88 modern constellations.",
     id: 3,
     img: aries,
   },
@@ -42,79 +46,94 @@ export const spaceList: IGalaxy[] = [
 export const andromedaStars: IStar[] = [
   {
     id: 1,
-    name: "Alpheratz",
-    distance: "97 light-years",
-    mass: "3.8 solar masses",
-    type: "8500 K",
+    name: "Sagittarius A",
+    distance: "26 673 light-years",
+    mass: "4 million solar masses",
+    location: "The Milky Way Galaxy",
     description:
-      "Although it appears to the naked eye as a single star, it is actually a binary system composed of two stars in close orbit. The chemical composition of the brighter of the two stars is unusual as it is a mercury-manganese star whose atmosphere contains abnormally high levels of mercury, manganese, and other elements, including gallium and xenon. It is the brightest mercury-manganese star known.",
-    img: alpheratz,
+      'Sagittarius A*, often abbreviated to Sgr A* and pronounced "Sagittarius A star", is a supermassive black hole located at the center of our spiral galaxy, the Milky Way.\n' +
+      "\n" +
+      "Sagittarius A* is mostly dormant and only occasionally absorbs gas or dust, but nonetheless has an estimated mass millions times that of our sun. ",
+    img: saggitarius,
   },
   {
     id: 2,
-    name: "Mirach",
-    distance: "197 light-years",
-    mass: "2.19 solar masses",
-    type: "3842 K",
-    description: "β Andromedae, officially named Mirach is a prominent star in the northern constellation of Andromeda. It is commonly used by stargazers to find the Andromeda Galaxy. This star is the brightest star in the constellation.",
-    img: mirach,
+    name: "M87",
+    distance: "55 million light-years",
+    mass: "3.5 - 6.6 billion solar masses",
+    location: "Messier 87",
+    description:
+      "M87* is located in the center of Messier 87 and it is one of the largest known black holes in the universe at about 6.5 billion times the mass of the sun, more than 1000 times the mass of Sgr A*. ",
+    img: m87,
   },
   {
     id: 3,
-    name: "Almach",
-    distance: "390 light-years",
-    mass: "23.7 solar masses",
-    type: "4250 K",
-    description: "Gamma Andromedae is the third-brightest point of light in the northern constellation of Andromeda. It is a multiple star system. It appears to be a bright, golden-yellow star next to a dimmer, indigo-blue star",
-    img: almach,
+    name: "BH in Henize 2-10",
+    distance: "30 million light-years",
+    mass: "1 million solar masses",
+    location: "Henize 2-10",
+    description:
+      " This black hole is at the heart of the dwarf galaxy Henize 2-10 and it is creating stars rather than gobbling them up. The black hole is apparently contributing to the firestorm of new star formation taking place in the galaxy. The dwarf galaxy lies 30 million light-years away, in the southern constellation Pyxis.",
+    img: henize,
   },
   {
     id: 4,
-    name: "Titawin",
-    distance: "44 light-years",
-    mass: "0.2 solar masses",
-    type: "6213 K",
-    description: "Upsilon Andromedae is a binary star located 44 light-years from Earth in the constellation of Andromeda. The system consists of an F-type main-sequence star, officially named Titawin, and a smaller red dwarf.",
-    img: titawin,
+    name: "GNz7q",
+    distance: "13.1 billion light-years",
+    mass: "Unknown",
+    location: "GNz7q galaxy",
+    description:
+      "GNz7q is the first example of a rapidly-growing black hole in the dusty core of a starburst galaxy at an epoch close to the earliest supermassive black hole known in the Universe. Scientists believe this black hole existed just 750 million years after the Big Bang.",
+    img: gnz7q,
+  },
+  {
+    id: 5,
+    name: "GRS 1915+105",
+    distance: "28 000 light-years",
+    mass: "12.4 solar masses",
+    location: "The Milky Way Galaxy",
+    description:
+      "What makes GRS 1915+105 unusual is that it's spinning about 1,000 times per second. That's the maximum possible rate. Scientists measure the spin to determine how strongly the black hole drags spacetime right outside the hole's event horizon, the point beyond which nothing can escape.",
+    img: grs,
   },
 ];
 
-export const milkyWayStars: IStar[] = [
+export const galaxiesList: IGalaxy[] = [
   {
+    name: "Andromeda",
+    distance: "2.5 million light-years",
+    description:
+      "Also known as Messier 31(M31) is a barred spiral galaxy and the nearest large galaxy to the Milky Way",
+    radius: "46.56 kiloparsecs",
     id: 1,
-    name: "Aldebaran",
-    distance: "65.3 light-years",
-    mass: "1.16 solar masses",
-    type: "3900 K",
-    description: "Aldebaran is the brightest star in the zodiac constellation of Taurus. Aldebaran is a giant star that is cooler than the Sun with a surface temperature of 3,900 K, but its radius is about 44 times the Sun's, so it is over 400 times as luminous.",
-    img: aldebaran,
+    img: andromeda,
   },
   {
+    name: "Milky Way",
+    distance: "Current location",
+    radius: "26.8 kiloparsecs",
+    description:
+      "The Milky Way is the galaxy that includes our Solar System, with the name describing the galaxy's appearance from Earth: a hazy band of light seen in the night sky formed from stars that cannot be individually distinguished by the naked eye",
+
     id: 2,
-    name: "milky2",
-    distance: "",
-    mass: "mnogo",
-    type: "big big",
-    description: "star star star star star",
-    img: triangulum,
+    img: milkyway,
   },
   {
+    name: "Triangulum",
+    distance: "3.2 million light-years",
+    radius: "18.74 kiloparsecs",
+    description:
+      "The Triangulum Galaxy is the third-largest member of the Local Group of galaxies, behind the Andromeda Galaxy and the Milky Way. It is one of the most distant permanent objects that can be viewed with the naked eye",
     id: 3,
-    name: "milky4",
-    distance: "",
-    mass: "mnogo",
-    type: "big big",
-    description: "star star star star star",
     img: triangulum,
   },
   {
     id: 4,
-    name: "planet4",
-    distance: "",
-    mass: "mnogo",
-    type: "big big",
-    description: "star star star star star",
-    img: triangulum,
+    name: "ESO 137-001",
+    distance: "220 million light-years",
+    radius: "30.66 kiloparsecs",
+    description: "ESO 137-001 is a barred spiral galaxy with located in the constellation Triangulum Australe and in the cluster Abell 3627. As the galaxy moves to the center of the cluster at 1900 km/s  it is stripped by hot gas, thus creating a 260,000 light-year long tail. This is called ram pressure stripping. The intergalactic gas in Abell 3627 is at 100 million Kelvin, which causes star formation in the tails.",
+    img: eso,
   },
 ];
 
@@ -124,7 +143,7 @@ export const triangulumStars: IStar[] = [
     name: "tri",
     mass: "mnogo",
     distance: "",
-    type: "big big",
+    location: "big big",
     description: "star star star star star",
     img: triangulum,
   },
@@ -133,7 +152,7 @@ export const triangulumStars: IStar[] = [
     name: "trian",
     mass: "mnogo",
     distance: "",
-    type: "big big",
+    location: "big big",
     description: "star star star star star",
     img: triangulum,
   },
@@ -142,7 +161,7 @@ export const triangulumStars: IStar[] = [
     name: "trudn",
     mass: "mnogo",
     distance: "",
-    type: "big big",
+    location: "big big",
     description: "star star star star star",
     img: triangulum,
   },
@@ -151,7 +170,7 @@ export const triangulumStars: IStar[] = [
     name: "plghanet4",
     mass: "mnogo",
     distance: "",
-    type: "big big",
+    location: "big big",
     description: "star star star star star",
     img: triangulum,
   },
