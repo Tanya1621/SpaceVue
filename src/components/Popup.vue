@@ -1,28 +1,30 @@
 <template>
   <div class="overlay">
     <div class="popup">
-      <button class="popup__button" @click="$emit('closePopup')" >Close</button>
+      <button class="popup__button" @click="$emit('closePopup')">Close</button>
       <div class="popup__galaxy">
-      <h1 class="popup__name">{{ item.name }}</h1>
-        <div v-if="isGalaxy">
-      <p class="popup__text">Number of stars: {{ item.stars }}</p>
-      <p class="popup__text">Symbolism: {{ item.symbol }} </p>
-      <p class="popup__text">Description: {{item.description}}</p>
-        </div>
-        <div v-else>
-          <p class="popup__text">Mass: {{ item.mass }}</p>
-          <p class="popup__text">Type: {{ item.type }} </p>
-          <p class="popup__text">Distance: {{item.distance}}</p>
-          <p class="popup__text">Description: {{item.description}}</p>
-        </div>
+        <h1 class="popup__name">{{ item.name }}</h1>
+        <p v-for="(value, name) in newObject" :key="name" class="popup__text">
+          {{ name[0].toUpperCase() + name.slice(1) }}: {{ value }}
+        </p>
+        <!--        <div v-if="isGalaxy">-->
+        <!--      <p class="popup__text">Number of stars: {{ item.stars }}</p>-->
+        <!--      <p class="popup__text">Symbolism: {{ item.symbol }} </p>-->
+        <!--      <p class="popup__text">Description: {{item.description}}</p>-->
+        <!--        </div>-->
+        <!--        <div v-else>-->
+        <!--          <p class="popup__text">Mass: {{ item.mass }}</p>-->
+        <!--          <p class="popup__text">Type: {{ item.type }} </p>-->
+        <!--          <p class="popup__text">Distance: {{item.distance}}</p>-->
+        <!--          <p class="popup__text">Description: {{item.description}}</p>-->
+        <!--        </div>-->
+      </div>
     </div>
-    </div>
-
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   props: {
@@ -33,10 +35,17 @@ export default defineComponent({
     isGalaxy: {
       required: true,
       type: Boolean,
-    }
+    },
   },
-  name: "PopupGalaxy",
-})
+  name: "PopupInfo",
+  data() {
+    const newObject = Object.assign({}, this.item);
+    delete newObject.name;
+    delete newObject.id;
+    delete newObject.img;
+    return { newObject };
+  },
+});
 </script>
 
 <style scoped>
@@ -49,7 +58,7 @@ export default defineComponent({
   }
 }
 
-@keyframes text{
+@keyframes text {
   0% {
     opacity: 0;
   }
@@ -60,7 +69,7 @@ export default defineComponent({
 .overlay {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   right: 0;
@@ -72,7 +81,7 @@ export default defineComponent({
 
 .popup {
   width: 50%;
-  background-color: rgba(20, 29, 52, .8);
+  background-color: rgba(20, 29, 52, 0.8);
   box-shadow: 0px 0px 12px 0px rgb(98, 94, 98);
   border-radius: 10px;
   position: relative;
@@ -91,10 +100,10 @@ export default defineComponent({
   width: 200px;
   background-color: rgba(116, 143, 215, 0.4);
   border-radius: 0 0 40px 40px;
-  font-family: 'Audiowide', cursive;
+  font-family: "Audiowide", cursive;
   color: white;
   font-size: 30px;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
   cursor: pointer;
 }
 
@@ -105,12 +114,12 @@ export default defineComponent({
   margin: 50px auto 20px;
   opacity: 0;
   animation: text 1s 1s ease forwards;
-  border-bottom: solid 1px rgba(255,255,255, .3);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.3);
   padding-bottom: 20px;
 }
 
 .popup__button:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .popup__text {

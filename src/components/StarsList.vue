@@ -5,7 +5,7 @@
     <StarItem v-for="star in stars"  :key="star.id" :star="star" :chosenStar="chosenStar" @chooseStar="chooseStar" @openPopup="openPopup"/>
   </ul>
   </section>
-  <PopupGalaxy
+  <PopupInfo
       @closePopup="closePopup"
       v-if="opened"
       :item="current"
@@ -21,9 +21,9 @@ import type IStar from "@/types/IStar";
 import StarItem from "@/components/StarItem.vue";
 import {milkyWayStars} from "@/utils/constants";
 import {triangulumStars} from "@/utils/constants";
-import PopupGalaxy from "@/components/PopupGalaxy.vue";
+import PopupInfo from "@/components/Popup.vue";
 export default defineComponent({
-  components: {StarItem, PopupGalaxy},
+  components: {StarItem, PopupInfo},
   props: {
     chosenGalaxy: {
       required: true,

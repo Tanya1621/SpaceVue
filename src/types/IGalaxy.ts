@@ -1,4 +1,4 @@
-interface IGalaxy {
+interface ISpaceItem {
   name: string;
   stars: number;
   description: string;
@@ -7,4 +7,5 @@ interface IGalaxy {
   img: string;
 }
 
-export default IGalaxy;
+export default ISpaceItem;
+

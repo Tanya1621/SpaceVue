@@ -5,7 +5,7 @@
       <GalaxyItem v-for="galaxy in galaxies" :key="galaxy.id" :galaxy="galaxy" @openPopup="openPopup" @chooseGalaxy="chooseGalaxy" :chosenGalaxy="chosenGalaxy"/>
     </ul>
   </section>
-  <PopupGalaxy
+  <PopupInfo
     @closePopup="closePopup"
     v-if="opened"
     :item="current"
@@ -19,14 +19,14 @@
 import { defineComponent } from "vue";
 import { ref } from "vue";
 import type IGalaxy from "../types/IGalaxy";
-import PopupGalaxy from "@/components/PopupGalaxy.vue";
+import PopupInfo from "@/components/Popup.vue";
 import GalaxyItem from "@/components/GalaxyItem.vue";
-import {galaxyList} from "@/utils/constants";
+import {spaceList} from "@/utils/constants";
 import StarsList from "@/components/StarsList.vue";
 
 export default defineComponent({
   name: "Space-gallery",
-  components: {GalaxyItem, PopupGalaxy, StarsList },
+  components: {GalaxyItem, PopupInfo, StarsList },
   data() {
     let opened: boolean = false;
     let chosenGalaxy: number = 0;
@@ -34,7 +34,7 @@ export default defineComponent({
     return { opened, current, chosenGalaxy };
   },
   setup() {
-    const galaxies = galaxyList;
+    const galaxies = spaceList;
     return { galaxies };
   },
   methods: {

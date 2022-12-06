@@ -10,7 +10,7 @@ import mirach from '@/assets/Mirach.jpeg';
 import aldebaran from '@/assets/Aldebaran.jpeg';
 import aries from '@/assets/aries.webp'
 
-export const galaxyList: IGalaxy[] = [
+export const spaceList: IGalaxy[] = [
   {
     name: "Andromeda",
     stars: 65,
