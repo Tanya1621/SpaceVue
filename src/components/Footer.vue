@@ -1,8 +1,8 @@
 <template>
   <footer class="footer">
-    <p class="footer__info">To learn more about the Space:</p>
+    <p class="footer__info">To learn more about the Universe:</p>
     <ul class="footer__list">
-      <li v-for="link in links" :key="link.id">
+      <li v-for="link in links" :key="link.id" class="footer__list-item">
         <a class="footer__link" :href="link.link">{{ link.name }}</a>
       </li>
     </ul>
@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
   name: "AppFooter",
   data() {
@@ -35,16 +35,16 @@ export default defineComponent({
         link: "https://www.space.com",
         id: 4,
       },
-    ]
-    return {links};
+    ];
+    return { links };
   },
-})
+});
 </script>
 
 <style scoped>
 .footer__info {
   margin: 0;
-  font-size: 30px;
+  font-size: 20px;
 }
 .footer__list {
   list-style: none;
@@ -52,15 +52,25 @@ export default defineComponent({
   margin: 0;
 }
 
-.footer__link {
-  color: white;
-  font-size: 30px;
+.footer__list-item {
+  margin-bottom: 10px;
 }
 
-.footer{
+.footer__link {
+  color: white;
+  font-size: 20px;
+  transition: opacity 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.footer__link:hover {
+  opacity: 0.7;
+}
+
+.footer {
   padding: 50px;
   display: flex;
-  gap: 100px;
+  gap: 50px;
   justify-content: center;
 }
 </style>

@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
   props: {
     isMain: {
@@ -38,13 +38,13 @@ export default defineComponent({
     },
   },
   name: "GalleryItem",
-})
+});
 </script>
 
 <style scoped>
 .gallery__item {
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 250px;
   background-color: transparent;
   overflow: hidden;
   position: relative;
@@ -64,7 +64,7 @@ export default defineComponent({
 }
 
 .gallery__name {
-  font-size: 44px;
+  font-size: 30px;
   margin: 0;
   position: relative;
   text-align: center;
@@ -84,8 +84,8 @@ export default defineComponent({
   z-index: 1000;
   top: 10px;
   right: 10px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 .gallery__button_add {
@@ -104,6 +104,6 @@ export default defineComponent({
   align-items: center;
   position: relative;
   gap: 10px;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 </style>

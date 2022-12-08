@@ -38,7 +38,7 @@ export default defineComponent({
   data() {
     let opened: boolean = false;
     let chosenItem: number = 0;
-    let current = ref<ISpaceItem | undefined >(undefined);
+    let current = ref<ISpaceItem | undefined>(undefined);
     return { opened, current, chosenItem: chosenItem };
   },
   setup() {
@@ -63,7 +63,7 @@ export default defineComponent({
 
 <style scoped>
 .galaxies__heading {
-  font-size: 70px;
+  font-size: 40px;
   margin: 40px 0;
   text-align: center;
 }
@@ -71,11 +71,11 @@ export default defineComponent({
 .galaxy__list {
   list-style: none;
   padding: 0;
-  margin: 100px auto;
+  margin: 50px auto;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 </style>

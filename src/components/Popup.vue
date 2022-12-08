@@ -3,21 +3,11 @@
     <div class="popup">
       <button class="popup__button" @click="$emit('closePopup')">Close</button>
       <div class="popup__galaxy">
-        <h1 class="popup__name">{{item.name}}</h1>
+        <h1 class="popup__name">{{ item.name }}</h1>
         <p v-for="(value, name) in newObject" :key="name" class="popup__text">
-          {{name.toString()[0].toUpperCase() + name.toString().slice(1)}} : {{value}}
+          {{ name.toString()[0].toUpperCase() + name.toString().slice(1) }} :
+          {{ value }}
         </p>
-        <!--        <div v-if="isGalaxy">-->
-        <!--      <p class="popup__text">Number of stars: {{ item.stars }}</p>-->
-        <!--      <p class="popup__text">Symbolism: {{ item.symbol }} </p>-->
-        <!--      <p class="popup__text">Description: {{item.description}}</p>-->
-        <!--        </div>-->
-        <!--        <div v-else>-->
-        <!--          <p class="popup__text">Mass: {{ item.mass }}</p>-->
-        <!--          <p class="popup__text">Type: {{ item.type }} </p>-->
-        <!--          <p class="popup__text">Distance: {{item.distance}}</p>-->
-        <!--          <p class="popup__text">Description: {{item.description}}</p>-->
-        <!--        </div>-->
       </div>
     </div>
   </div>
@@ -57,7 +47,7 @@ export default defineComponent({
     max-height: 0;
   }
   100% {
-    max-height: 1200px;
+    max-height: 90vh;
   }
 }
 
@@ -84,6 +74,7 @@ export default defineComponent({
 
 .popup {
   width: 50%;
+  min-width: 600px;
   background-color: rgba(20, 29, 52, 0.8);
   box-shadow: 0 0 12px 0 rgb(98, 94, 98);
   border-radius: 10px;
@@ -111,7 +102,7 @@ export default defineComponent({
 }
 
 .popup__name {
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   width: 80%;
   margin: 50px auto 20px;
@@ -126,8 +117,8 @@ export default defineComponent({
 }
 
 .popup__text {
-  margin: 20px 50px 20px 50px;
-  font-size: 40px;
+  margin: 10px 50px;
+  font-size: 25px;
   opacity: 0;
   animation: text 1s 1s ease forwards;
 }

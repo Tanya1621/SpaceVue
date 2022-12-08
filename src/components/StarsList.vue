@@ -24,14 +24,11 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import { blackHolesList } from "@/utils/constants";
 import type IStar from "@/types/IStar";
 import type IGalaxy from "@/types/IGalaxy";
-import { galaxiesList } from "@/utils/constants";
-import { nebulae } from "@/utils/constants";
 import PopupInfo from "@/components/Popup.vue";
 import GalleryItem from "@/components/GalleryItem.vue";
-import {wholeListOfSpaceItems} from "@/utils/constants";
+import { wholeListOfSpaceItems } from "@/utils/constants";
 export default defineComponent({
   components: { GalleryItem, PopupInfo },
   props: {
@@ -44,15 +41,15 @@ export default defineComponent({
   data() {
     let opened: boolean = false;
     let chosenStar: any = [];
-    let current = ref<IStar | IGalaxy | undefined| any>(undefined);
-    let stars = ref<IStar[] | IGalaxy[]| any[]>(
+    let current = ref<IStar | IGalaxy | undefined | any>(undefined);
+    let stars = ref<IStar[] | IGalaxy[] | any[]>(
       wholeListOfSpaceItems[this.chosenItem - 1]
     );
     return { opened, current, chosenStar, stars };
   },
   watch: {
     chosenItem: function () {
-      this.stars = wholeListOfSpaceItems[this.chosenItem - 1]
+      this.stars = wholeListOfSpaceItems[this.chosenItem - 1];
     },
   },
   methods: {
@@ -78,7 +75,7 @@ export default defineComponent({
 
 <style scoped>
 .stars__heading {
-  font-size: 70px;
+  font-size: 40px;
   margin: 40px 0;
   text-align: center;
 }
@@ -86,11 +83,11 @@ export default defineComponent({
 .stars__list {
   list-style: none;
   padding: 0;
-  margin: 100px auto;
+  margin: 50px auto;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 </style>

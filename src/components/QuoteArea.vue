@@ -77,8 +77,8 @@ export default defineComponent({
 }
 .quote__arrow {
   border: none;
-  width: 400px;
-  height: 200px;
+  width: 200px;
+  height: 100px;
   background: transparent no-repeat url("../assets/arrow.svg") center;
   background-size: contain;
   transition: transform 0.5s ease;
@@ -106,18 +106,18 @@ export default defineComponent({
   transform: rotate(90deg) translate(0, 10px);
 }
 .quote {
-  margin: 50px auto;
+  margin: 30px auto;
   width: 50%;
   text-align: center;
-  font-size: 70px;
+  font-size: 40px;
   padding-bottom: 20px;
   border-bottom: 2px solid aliceblue;
 }
 
 .quote__author {
-  margin: 50px auto 100px;
+  margin: 20px auto 100px;
   width: 50%;
   text-align: right;
-  font-size: 40px;
+  font-size: 30px;
 }
 </style>

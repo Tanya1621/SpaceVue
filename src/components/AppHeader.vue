@@ -10,16 +10,16 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
   name: "AppHeader",
-})
+});
 </script>
 
 <style scoped>
 .header {
   padding: 50px;
-  height: 700px;
+  height: 400px;
   position: relative;
   overflow: hidden;
 }
@@ -27,7 +27,7 @@ export default defineComponent({
 .header__logo {
   position: relative;
   z-index: 100;
-  width: 500px;
+  width: 300px;
   height: 100px;
 }
 

@@ -3,12 +3,6 @@ import milkyway from "@/assets/milkyway.jpeg";
 import triangulum from "@/assets/Triangulum_Galaxy.jpeg";
 import type ISpaceItem from "@/types/ISpaceItem";
 import type IStar from "@/types/IStar";
-import alpheratz from "@/assets/alpheratz.jpeg";
-import titawin from "@/assets/titawin.jpeg";
-import almach from "@/assets/almach.jpeg";
-import mirach from "@/assets/Mirach.jpeg";
-import aldebaran from "@/assets/Aldebaran.jpeg";
-import aries from "@/assets/aries.webp";
 import blackHoles from "@/assets/black_holes.jpeg";
 import saggitarius from "@/assets/saggitarius.jpeg";
 import m87 from "@/assets/m87.jpg";
@@ -23,7 +17,7 @@ import orion from "@/assets/orion.jpeg";
 import crab from "@/assets/crab.jpeg";
 import helix from "@/assets/helix.jpeg";
 import eagle from "@/assets/eagle.jpeg";
-import omega from "@/assets/omega.jpeg"
+import omega from "@/assets/omega.jpeg";
 
 export const spaceList: ISpaceItem[] = [
   {
@@ -174,12 +168,12 @@ export const nebulae: IGalaxy[] = [
     id: 3,
     img: helix,
   },
-   {
+  {
     name: "Eagle Nebula",
     distance: "7000 light-years",
     radius: "21.5 parsecs",
     description:
-        "The Eagle Nebula, also known as Messier 16 or M16, is one of the most amazing sights you can see in a large telescope. It’s the location of several famous structures, including the stunning Pillars of Creation, a star-forming region. The Eagle Nebula contains not only the Pillars of Creation but several other star-forming regions as well. It also has many emission nebulae, or clouds in space that shine with their own light. And it has some dark nebulae. These are space clouds that don’t shine themselves, but that can be seen because they obscure light from shining objects located behind them.",
+      "The Eagle Nebula, also known as Messier 16 or M16, is one of the most amazing sights you can see in a large telescope. It’s the location of several famous structures, including the stunning Pillars of Creation, a star-forming region. The Eagle Nebula contains not only the Pillars of Creation but several other star-forming regions as well. It also has many emission nebulae, or clouds in space that shine with their own light. And it has some dark nebulae. These are space clouds that don’t shine themselves, but that can be seen because they obscure light from shining objects located behind them.",
     id: 4,
     img: eagle,
   },
@@ -188,10 +182,14 @@ export const nebulae: IGalaxy[] = [
     distance: "5500 light-years",
     radius: "3.4 parsecs",
     description:
-        "M17, also known as the Omega Nebula or Swan Nebula, is one of the largest star-forming regions in the Milky Way galaxy. M17 contains one of our galaxy’s youngest star clusters, at only 1 million years old. However, many of the young stars in this cluster are impossible to see because of the gas and dust that surrounds them. The powerful radiation from the young stars evaporates and erodes the dense clouds of cold gas in which new stars form. ",
+      "M17, also known as the Omega Nebula or Swan Nebula, is one of the largest star-forming regions in the Milky Way galaxy. M17 contains one of our galaxy’s youngest star clusters, at only 1 million years old. However, many of the young stars in this cluster are impossible to see because of the gas and dust that surrounds them. The powerful radiation from the young stars evaporates and erodes the dense clouds of cold gas in which new stars form. ",
     id: 5,
     img: omega,
   },
 ];
 
-export const wholeListOfSpaceItems: [IStar[], IGalaxy[], IGalaxy[]] = [blackHolesList, galaxiesList, nebulae];
+export const wholeListOfSpaceItems: [IStar[], IGalaxy[], IGalaxy[]] = [
+  blackHolesList,
+  galaxiesList,
+  nebulae,
+];
