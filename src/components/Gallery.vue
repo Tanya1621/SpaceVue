@@ -15,7 +15,7 @@
   </section>
   <PopupInfo
     @closePopup="closePopup"
-    v-if="opened"
+    v-if="opened && current"
     :item="current"
     :opened="opened"
     :isGalaxy="true"
@@ -38,7 +38,7 @@ export default defineComponent({
   data() {
     let opened: boolean = false;
     let chosenItem: number = 0;
-    let current = ref<ISpaceItem | undefined>(undefined);
+    let current = ref<ISpaceItem | undefined >(undefined);
     return { opened, current, chosenItem: chosenItem };
   },
   setup() {

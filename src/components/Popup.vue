@@ -3,9 +3,9 @@
     <div class="popup">
       <button class="popup__button" @click="$emit('closePopup')">Close</button>
       <div class="popup__galaxy">
-        <h1 class="popup__name">{{ item.name }}</h1>
+        <h1 class="popup__name">{{item.name}}</h1>
         <p v-for="(value, name) in newObject" :key="name" class="popup__text">
-          {{ name[0].toUpperCase() + name.slice(1) }}: {{ value }}
+          {{name.toString()[0].toUpperCase() + name.toString().slice(1)}} : {{value}}
         </p>
         <!--        <div v-if="isGalaxy">-->
         <!--      <p class="popup__text">Number of stars: {{ item.stars }}</p>-->
@@ -39,10 +39,13 @@ export default defineComponent({
   },
   name: "PopupInfo",
   data() {
-    const newObject = Object.assign({}, this.item);
+    console.log(typeof this.item);
+    console.log(this.item);
+    const newObject: any = Object.assign({}, this.item);
     delete newObject.name;
     delete newObject.id;
     delete newObject.img;
+    console.log(newObject);
     return { newObject };
   },
 });

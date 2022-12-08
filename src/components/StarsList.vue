@@ -15,7 +15,7 @@
   </section>
   <PopupInfo
     @closePopup="closePopup"
-    v-if="opened"
+    v-if="opened && current"
     :item="current"
     :opened="opened"
     :isGalaxy="false"
@@ -44,8 +44,8 @@ export default defineComponent({
   data() {
     let opened: boolean = false;
     let chosenStar: any = [];
-    let current = ref<IStar | IGalaxy | undefined>(undefined);
-    let stars = ref<IStar[] | IGalaxy[]| any>(
+    let current = ref<IStar | IGalaxy | undefined| any>(undefined);
+    let stars = ref<IStar[] | IGalaxy[]| any[]>(
       wholeListOfSpaceItems[this.chosenItem - 1]
     );
     return { opened, current, chosenStar, stars };
@@ -57,7 +57,6 @@ export default defineComponent({
   },
   methods: {
     openPopup(id: number) {
-      console.log("ready");
       this.current = this.stars.find((el: IStar | IGalaxy) => el.id === id);
       this.opened = true;
     },
