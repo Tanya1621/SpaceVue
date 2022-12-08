@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="stars__heading">Choose your star</h2>
+    <h2 class="stars__heading">Read more</h2>
     <ul class="stars__list">
       <GalleryItem
         v-for="star in stars"
@@ -24,12 +24,14 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import { andromedaStars } from "@/utils/constants";
+import { blackHolesList } from "@/utils/constants";
 import type IStar from "@/types/IStar";
+import type IGalaxy from "@/types/IGalaxy";
 import { galaxiesList } from "@/utils/constants";
-import { triangulumStars } from "@/utils/constants";
+import { nebulae } from "@/utils/constants";
 import PopupInfo from "@/components/Popup.vue";
 import GalleryItem from "@/components/GalleryItem.vue";
+import {wholeListOfSpaceItems} from "@/utils/constants";
 export default defineComponent({
   components: { GalleryItem, PopupInfo },
   props: {
@@ -42,29 +44,21 @@ export default defineComponent({
   data() {
     let opened: boolean = false;
     let chosenStar: any = [];
-    let current = ref<IStar | undefined>(undefined);
-    let stars =
-      this.chosenItem === 1
-        ? andromedaStars
-        : this.chosenItem === 2
-        ? galaxiesList
-        : triangulumStars;
+    let current = ref<IStar | IGalaxy | undefined>(undefined);
+    let stars = ref<IStar[] | IGalaxy[]| any>(
+      wholeListOfSpaceItems[this.chosenItem - 1]
+    );
     return { opened, current, chosenStar, stars };
   },
   watch: {
     chosenItem: function () {
-      this.stars =
-        this.chosenItem === 1
-          ? andromedaStars
-          : this.chosenItem === 2
-          ? galaxiesList
-          : triangulumStars;
+      this.stars = wholeListOfSpaceItems[this.chosenItem - 1]
     },
   },
   methods: {
     openPopup(id: number) {
       console.log("ready");
-      this.current = this.stars.find((el) => el.id === id);
+      this.current = this.stars.find((el: IStar | IGalaxy) => el.id === id);
       this.opened = true;
     },
     closePopup() {

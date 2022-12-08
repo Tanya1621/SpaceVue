@@ -82,7 +82,7 @@ export default defineComponent({
 .popup {
   width: 50%;
   background-color: rgba(20, 29, 52, 0.8);
-  box-shadow: 0px 0px 12px 0px rgb(98, 94, 98);
+  box-shadow: 0 0 12px 0 rgb(98, 94, 98);
   border-radius: 10px;
   position: relative;
   max-height: 0;
@@ -93,7 +93,7 @@ export default defineComponent({
 .popup__button {
   position: absolute;
   border: none;
-  box-shadow: inset 0px 0px 18px 4px rgba(12, 91, 133, 1);
+  box-shadow: inset 0 0 18px 4px rgba(12, 91, 133, 1);
   bottom: -50px;
   right: 0;
   height: 50px;

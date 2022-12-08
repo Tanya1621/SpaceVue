@@ -17,7 +17,13 @@ import gnz7q from "@/assets/GNz7q.jpeg";
 import grs from "@/assets/grs.jpeg";
 import galaxies from "@/assets/galaxies.jpeg";
 import type IGalaxy from "@/types/IGalaxy";
-import eso from '@/assets/eso.jpg'
+import eso from "@/assets/eso.jpg";
+import nebula from "@/assets/nebula.jpeg";
+import orion from "@/assets/orion.jpeg";
+import crab from "@/assets/crab.jpeg";
+import helix from "@/assets/helix.jpeg";
+import eagle from "@/assets/eagle.jpeg";
+import omega from "@/assets/omega.jpeg"
 
 export const spaceList: ISpaceItem[] = [
   {
@@ -35,15 +41,15 @@ export const spaceList: ISpaceItem[] = [
     img: galaxies,
   },
   {
-    name: "Aries",
+    name: "Nebulae",
     description:
-      "The name Aries is Latin for ram. Its old astronomical symbol is Aries symbol. It is one of the 48 constellations described by the 2nd century astronomer Ptolemy, and remains one of the 88 modern constellations.",
+      'Nebula is a giant cloud of dust and gas in space. Some nebulae (more than one nebula) come from the gas and dust thrown out by the explosion of a dying star, such as a supernova. Other nebulae are regions where new stars are beginning to form. For this reason, some nebulae are called "star nurseries."',
     id: 3,
-    img: aries,
+    img: nebula,
   },
 ];
 
-export const andromedaStars: IStar[] = [
+export const blackHolesList: IStar[] = [
   {
     id: 1,
     name: "Sagittarius A",
@@ -132,46 +138,60 @@ export const galaxiesList: IGalaxy[] = [
     name: "ESO 137-001",
     distance: "220 million light-years",
     radius: "30.66 kiloparsecs",
-    description: "ESO 137-001 is a barred spiral galaxy with located in the constellation Triangulum Australe and in the cluster Abell 3627. As the galaxy moves to the center of the cluster at 1900 km/s  it is stripped by hot gas, thus creating a 260,000 light-year long tail. This is called ram pressure stripping. The intergalactic gas in Abell 3627 is at 100 million Kelvin, which causes star formation in the tails.",
+    description:
+      "ESO 137-001 is a barred spiral galaxy with located in the constellation Triangulum Australe and in the cluster Abell 3627. As the galaxy moves to the center of the cluster at 1900 km/s  it is stripped by hot gas, thus creating a 260,000 light-year long tail. This is called ram pressure stripping. The intergalactic gas in Abell 3627 is at 100 million Kelvin, which causes star formation in the tails.",
     img: eso,
   },
 ];
 
-export const triangulumStars: IStar[] = [
+export const nebulae: IGalaxy[] = [
   {
+    name: "Orion Nebula",
+    distance: "1344 light-years",
+    radius: "3.7 parsecs",
+    description:
+      "The Orion Nebula (also known as Messier 42, M42, or NGC 1976) is a diffuse nebula situated in the Milky Way, being south of Orion's Belt in the constellation of Orion. It is one of the brightest nebulae and is visible to the naked eye in the night sky and is the closest region of massive star formation to Earth. ",
     id: 1,
-    name: "tri",
-    mass: "mnogo",
-    distance: "",
-    location: "big big",
-    description: "star star star star star",
-    img: triangulum,
+    img: orion,
   },
   {
+    name: "Crab Nebula",
+    distance: "6500 light-years",
+    radius: "1.7 parsecs",
+    description:
+      "Crab Nebula, (catalog numbers NGC 1952 and M1), probably the most intensely studied bright nebula, in the constellation Taurus. It is assumed to be the remnant of a supernova (violently exploding star) observed by Chinese and other astronomers first on July 4, 1054. The supernova was visible in daylight for 23 days and at night for almost 2 years. There are no records of its observation at the time by Europeans.",
     id: 2,
-    name: "trian",
-    mass: "mnogo",
-    distance: "",
-    location: "big big",
-    description: "star star star star star",
-    img: triangulum,
+    img: crab,
   },
   {
+    name: "Helix Nebula",
+    distance: "650 light-years",
+    radius: "0.88 parsecs",
+    description:
+      "This object, called the Helix nebula, lies in the constellation of Aquarius. Also known by the catalog number NGC 7293, it is a typical example of a class of objects called planetary nebulae. Discovered in the 18th century, these cosmic works of art were erroneously named for their resemblance to gas-giant planets.\n" +
+      "\n" +
+      "Planetary nebulae are actually the remains of stars that once looked a lot like our sun. These stars spend most of their lives turning hydrogen into helium in massive runaway nuclear fusion reactions in their cores. In fact, this process of fusion provides all the light and heat that we get from our sun.",
     id: 3,
-    name: "trudn",
-    mass: "mnogo",
-    distance: "",
-    location: "big big",
-    description: "star star star star star",
-    img: triangulum,
+    img: helix,
+  },
+   {
+    name: "Eagle Nebula",
+    distance: "7000 light-years",
+    radius: "21.5 parsecs",
+    description:
+        "The Eagle Nebula, also known as Messier 16 or M16, is one of the most amazing sights you can see in a large telescope. It’s the location of several famous structures, including the stunning Pillars of Creation, a star-forming region. The Eagle Nebula contains not only the Pillars of Creation but several other star-forming regions as well. It also has many emission nebulae, or clouds in space that shine with their own light. And it has some dark nebulae. These are space clouds that don’t shine themselves, but that can be seen because they obscure light from shining objects located behind them.",
+    id: 4,
+    img: eagle,
   },
   {
-    id: 4,
-    name: "plghanet4",
-    mass: "mnogo",
-    distance: "",
-    location: "big big",
-    description: "star star star star star",
-    img: triangulum,
+    name: "Omega Nebula",
+    distance: "5500 light-years",
+    radius: "3.4 parsecs",
+    description:
+        "M17, also known as the Omega Nebula or Swan Nebula, is one of the largest star-forming regions in the Milky Way galaxy. M17 contains one of our galaxy’s youngest star clusters, at only 1 million years old. However, many of the young stars in this cluster are impossible to see because of the gas and dust that surrounds them. The powerful radiation from the young stars evaporates and erodes the dense clouds of cold gas in which new stars form. ",
+    id: 5,
+    img: omega,
   },
 ];
+
+export const wholeListOfSpaceItems: [IStar[], IGalaxy[], IGalaxy[]] = [blackHolesList, galaxiesList, nebulae];

@@ -1,13 +1,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import type IQuote from "@/types/IQuote";
-import {ref} from "vue";
+import { ref } from "vue";
 
 export default defineComponent({
   name: "App",
   components: {},
   data() {
-    let counter:number = 0;
+    let counter: number = 0;
     const quotes = ref<IQuote[]>([
       {
         id: 1,
@@ -27,19 +27,18 @@ export default defineComponent({
       {
         id: 3,
         author: "Carl Sagan",
-        text: 'Who are we? We find that we live on an insignificant planet of a humdrum star lost in a galaxy tucked away in some forgotten corner of a universe in which there are far more galaxies than people.'
+        text: "Who are we? We find that we live on an insignificant planet of a humdrum star lost in a galaxy tucked away in some forgotten corner of a universe in which there are far more galaxies than people.",
       },
       {
         id: 4,
         author: "Sally Ride",
-        text: "The stars don't look bigger but they do look brighter"
+        text: "The stars don't look bigger but they do look brighter",
       },
       {
         id: 5,
         author: "William S. Burroughs",
-        text: "After one look at this planet any visitor from outer space would say 'I want to see the manager."
+        text: "After one look at this planet any visitor from outer space would say 'I want to see the manager.",
       },
-
     ]);
     return { quotes, counter };
   },
@@ -53,8 +52,8 @@ export default defineComponent({
       if (this.counter === 0) {
         this.counter = this.quotes.length - 1;
       } else this.counter--;
-    }
-  }
+    },
+  },
 });
 </script>
 
@@ -65,7 +64,10 @@ export default defineComponent({
       {{ quotes[counter].text }}
     </p>
     <p class="quote__author">{{ quotes[counter].author }}</p>
-    <button @click="nextQuote" class="quote__arrow quote__arrow_forward"></button>
+    <button
+      @click="nextQuote"
+      class="quote__arrow quote__arrow_forward"
+    ></button>
   </section>
 </template>
 
@@ -79,7 +81,7 @@ export default defineComponent({
   height: 200px;
   background: transparent no-repeat url("../assets/arrow.svg") center;
   background-size: contain;
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .quote__arrow_back {

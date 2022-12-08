@@ -1,14 +1,18 @@
 <template>
   <header class="header">
-    <img src="../assets/SpaceVue.svg" class="header__logo">
-    <img src="../assets/Snimok-teleskopa-Vista.jpeg" class="header__image">
+    <img src="../assets/SpaceVue.svg" class="header__logo" alt="logo" />
+    <img
+      src="../assets/Snimok-teleskopa-Vista.jpeg"
+      class="header__image"
+      alt="background image"
+    />
   </header>
 </template>
 
 <script>
 export default {
-  name: "AppHeader"
-}
+  name: "AppHeader",
+};
 </script>
 
 <style scoped>
@@ -34,12 +38,11 @@ export default {
   left: 0;
   object-fit: cover;
   transform-origin: center;
-  transform: scale(1.0, 1.0);
+  transform: scale(1, 1);
   transition: transform 3s ease-out;
 }
 
 .header__image:hover {
-  transform: scale(1.5,1.5);
-
+  transform: scale(1.5, 1.5);
 }
 </style>

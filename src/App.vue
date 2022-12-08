@@ -4,12 +4,14 @@ import QuoteArea from './components/QuoteArea.vue'
 import AppHeader from "@/components/AppHeader.vue";
 import SpaceGallery from "@/components/Gallery.vue";
 import PopupInfo from "@/components/Popup.vue";
+import AppFooter from "@/components/Footer.vue";
 </script>
 
 <template>
   <AppHeader />
   <QuoteArea />
   <SpaceGallery />
+  <AppFooter />
 <!--  <PopupGalaxy />-->
 <!--  <RouterView />-->
 </template>

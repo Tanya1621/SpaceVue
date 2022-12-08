@@ -6,7 +6,8 @@
     </div>
     <div class="gallery__capture">
       <p class="gallery__name">{{ item.name.toUpperCase() }}</p>
-      <button v-if="isMain"
+      <button
+        v-if="isMain"
         :class="
           chosenItem === item.id
             ? 'gallery__button gallery__button_add added'
@@ -70,7 +71,7 @@ export default {
 
 .gallery__button {
   border: none;
-  box-shadow: inset 0px 0px 18px 4px rgba(12, 91, 133, 1);
+  box-shadow: inset 0 0 18px 4px rgba(12, 91, 133, 1);
   background-color: rgba(116, 143, 215, 0.4);
   color: white;
   font-size: 30px;
