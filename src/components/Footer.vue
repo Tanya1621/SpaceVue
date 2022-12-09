@@ -45,6 +45,7 @@ export default defineComponent({
 .footer__info {
   margin: 0;
   font-size: 20px;
+  text-align: center;
 }
 .footer__list {
   list-style: none;
@@ -72,5 +73,25 @@ export default defineComponent({
   display: flex;
   gap: 50px;
   justify-content: center;
+}
+
+@media screen and (max-width: 930px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer__link {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .footer__info {
+    font-size: 16px;
+  }
 }
 </style>

@@ -86,6 +86,7 @@ export default defineComponent({
   right: 10px;
   width: 40px;
   height: 40px;
+  padding: 0;
 }
 
 .gallery__button_add {
@@ -104,6 +105,24 @@ export default defineComponent({
   align-items: center;
   position: relative;
   gap: 10px;
-  padding-left: 40px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .gallery__name {
+    font-size: 20px;
+  }
+
+  .gallery__item {
+    width: 300px;
+    height: 200px;
+  }
+
+  .gallery__button {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+
 }
 </style>

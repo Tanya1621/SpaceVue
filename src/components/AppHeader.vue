@@ -1,16 +1,17 @@
 <template>
   <header class="header">
-    <img src="../assets/SpaceVue.svg" class="header__logo" alt="logo" />
+    <img src="../assets/SpaceVue.svg" class="header__logo" alt="logo"/>
     <img
-      src="../assets/Snimok-teleskopa-Vista.jpeg"
-      class="header__image"
-      alt="background image"
+        src="../assets/Snimok-teleskopa-Vista.jpeg"
+        class="header__image"
+        alt="background image"
     />
   </header>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
+
 export default defineComponent({
   name: "AppHeader",
 });
@@ -19,7 +20,7 @@ export default defineComponent({
 <style scoped>
 .header {
   padding: 50px;
-  height: 400px;
+  height: 50vh;
   position: relative;
   overflow: hidden;
 }
@@ -45,5 +46,27 @@ export default defineComponent({
 
 .header__image:hover {
   transform: scale(1.5, 1.5);
+}
+
+@media screen and (max-width: 800px) {
+  .header__logo {
+    width: 200px;
+    height: 75px;
+  }
+
+  .header {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header__logo {
+    width: 150px;
+    height: 50px;
+  }
+
+  .header {
+    padding: 10px;
+  }
 }
 </style>

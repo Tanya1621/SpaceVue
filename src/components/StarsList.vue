@@ -90,4 +90,20 @@ export default defineComponent({
   justify-content: center;
   gap: 30px;
 }
+
+
+@media screen and (max-width: 530px) {
+  .stars__heading {
+    font-size: 20px;
+    margin: 20px 0;
+
+  }
+
+  .stars__list  {
+    margin: 20px auto;
+    width: 100%;
+    gap: 20px;
+  }
+
+}
 </style>

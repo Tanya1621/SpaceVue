@@ -1,6 +1,6 @@
 <template>
   <section class="galaxies">
-    <h2 class="galaxies__heading">What are you interesting in?</h2>
+    <h2 class="galaxies__heading">What are you interested in?</h2>
     <ul class="galaxy__list">
       <GalleryItem
         v-for="item in galaxies"
@@ -78,4 +78,29 @@ export default defineComponent({
   justify-content: center;
   gap: 30px;
 }
+
+
+@media screen and (max-width: 930px) {
+  .galaxies__heading {
+    font-size: 30px;
+    margin: 30px 0;
+  }
+
+}
+
+@media screen and (max-width: 530px) {
+  .galaxies__heading {
+    font-size: 20px;
+    margin: 20px 0;
+
+  }
+
+  .galaxy__list {
+    margin: 20px auto;
+    width: 100%;
+    gap: 20px;
+  }
+
+}
+
 </style>

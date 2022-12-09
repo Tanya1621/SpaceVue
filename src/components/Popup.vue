@@ -4,10 +4,12 @@
       <button class="popup__button" @click="$emit('closePopup')">Close</button>
       <div class="popup__galaxy">
         <h1 class="popup__name">{{ item.name }}</h1>
+        <div class="popup__content">
         <p v-for="(value, name) in newObject" :key="name" class="popup__text">
           {{ name.toString()[0].toUpperCase() + name.toString().slice(1) }} :
-          {{ value }}
-        </p>
+          {{ value }} </p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -47,7 +49,7 @@ export default defineComponent({
     max-height: 0;
   }
   100% {
-    max-height: 90vh;
+    max-height: 1000px;
   }
 }
 
@@ -105,7 +107,7 @@ export default defineComponent({
   font-size: 40px;
   text-align: center;
   width: 80%;
-  margin: 50px auto 20px;
+  margin: 50px auto 0;
   opacity: 0;
   animation: text 1s 1s ease forwards;
   border-bottom: solid 1px rgba(255, 255, 255, 0.3);
@@ -117,13 +119,43 @@ export default defineComponent({
 }
 
 .popup__text {
-  margin: 10px 50px;
+  margin: 10px 0 0;
   font-size: 25px;
   opacity: 0;
   animation: text 1s 1s ease forwards;
 }
 
-.popup__text:last-of-type {
-  margin-bottom: 50px;
+
+.popup__content {
+  margin: 0 50px 50px;
+  max-height: 50vh;
+  overflow: auto;
 }
+
+@media screen and (max-width: 600px) {
+  .popup__name {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .popup__text {
+    font-size: 20px;
+  }
+  .popup {
+    min-width: 90%;
+    box-sizing: border-box;
+  }
+
+  .popup__content {
+    margin: 0 20px 20px;
+  }
+
+  .popup__button {
+    bottom: -30px;
+    height: 30px;
+    width: 130px;
+    font-size: 20px;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
 </style>

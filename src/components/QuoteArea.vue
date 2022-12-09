@@ -74,6 +74,8 @@ export default defineComponent({
 <style scoped>
 .quote__area {
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .quote__arrow {
   border: none;
@@ -86,15 +88,15 @@ export default defineComponent({
 
 .quote__arrow_back {
   position: absolute;
-  top: 100px;
-  left: 50px;
+  top: 30%;
+  left: 0px;
   transform: rotate(90deg);
 }
 
 .quote__arrow_forward {
   position: absolute;
-  top: 100px;
-  right: 50px;
+  top: 30%;
+  right: 0px;
   transform: rotate(-90deg);
 }
 
@@ -107,7 +109,7 @@ export default defineComponent({
 }
 .quote {
   margin: 30px auto;
-  width: 50%;
+  width: 70%;
   text-align: center;
   font-size: 40px;
   padding-bottom: 20px;
@@ -116,8 +118,61 @@ export default defineComponent({
 
 .quote__author {
   margin: 20px auto 100px;
-  width: 50%;
+  width: 70%;
   text-align: right;
   font-size: 30px;
+}
+
+@media screen and (max-width: 930px) {
+  .quote {
+    margin: 20px auto;
+    font-size: 30px;
+  }
+
+  .quote__author {
+    margin: 10px auto 75px;
+    font-size: 25px;
+  }
+
+  .quote__arrow_back {
+    top: 20%;
+  }
+  .quote__arrow_forward {
+    top: 20%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .quote__arrow {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .quote {
+    margin: 10px auto;
+    font-size: 16px;
+  }
+
+  .quote__author {
+    margin: 10px auto 50px;
+    font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .quote {
+    margin: 10px auto;
+    font-size: 16px;
+    width: 60%
+  }
+
+  .quote__author {
+    margin: 10px auto 50px;
+    font-size: 16px;
+    width: 60%;
+  }
 }
 </style>
