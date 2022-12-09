@@ -127,6 +127,7 @@ export default defineComponent({
   .quote {
     margin: 20px auto;
     font-size: 30px;
+    padding-bottom: 10px;
   }
 
   .quote__author {
