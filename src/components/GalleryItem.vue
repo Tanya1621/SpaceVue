@@ -81,7 +81,7 @@ export default defineComponent({
   font-family: "Audiowide", cursive;
   border-radius: 50%;
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   top: 10px;
   right: 10px;
   width: 40px;

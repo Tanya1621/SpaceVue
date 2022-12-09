@@ -1,6 +1,6 @@
 <template>
-  <div class="overlay">
-    <div class="popup">
+  <div class="overlay" @click="$emit('closePopup')">
+    <div class="popup" @click.stop="">
       <button class="popup__button" @click="$emit('closePopup')">Close</button>
       <div class="popup__galaxy">
         <h1 class="popup__name">{{ item.name }}</h1>
@@ -31,13 +31,10 @@ export default defineComponent({
   },
   name: "PopupInfo",
   data() {
-    console.log(typeof this.item);
-    console.log(this.item);
     const newObject: any = Object.assign({}, this.item);
     delete newObject.name;
     delete newObject.id;
     delete newObject.img;
-    console.log(newObject);
     return { newObject };
   },
 });
@@ -86,6 +83,7 @@ export default defineComponent({
   animation: animation 3s ease forwards;
 }
 
+
 .popup__button {
   position: absolute;
   border: none;
@@ -130,6 +128,13 @@ export default defineComponent({
   margin: 0 50px 50px;
   max-height: 50vh;
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.popup__content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 @media screen and (max-width: 600px) {
