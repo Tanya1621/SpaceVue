@@ -18,6 +18,13 @@ import crab from "@/assets/crab.jpeg";
 import helix from "@/assets/helix.jpeg";
 import eagle from "@/assets/eagle.jpeg";
 import omega from "@/assets/omega.jpeg";
+import stars from "@/assets/stars.jpeg";
+import sirius from "@/assets/sirius.jpeg";
+import canopus from "@/assets/canopus.png";
+import rigil from "@/assets/rigil.jpeg";
+import vega from "@/assets/vega.jpeg";
+import betelgeuse from "@/assets/betelgeuse.jpeg";
+import aldebaran from "@/assets/aldebaran.jpeg";
 
 export const spaceList: ISpaceItem[] = [
   {
@@ -40,6 +47,13 @@ export const spaceList: ISpaceItem[] = [
       'Nebula is a giant cloud of dust and gas in space. Some nebulae (more than one nebula) come from the gas and dust thrown out by the explosion of a dying star, such as a supernova. Other nebulae are regions where new stars are beginning to form. For this reason, some nebulae are called "star nurseries."',
     id: 3,
     img: nebula,
+  },
+  {
+    name: "Stars",
+    description:
+      "The age, distribution, and composition of the stars in a galaxy trace the history, dynamics, and evolution of that galaxy. Moreover, stars are responsible for the manufacture and distribution of heavy elements such as carbon, nitrogen, and oxygen, and their characteristics are intimately tied to the characteristics of the planetary systems that may coalesce about them.",
+    id: 4,
+    img: stars,
   },
 ];
 
@@ -188,8 +202,70 @@ export const nebulae: IGalaxy[] = [
   },
 ];
 
-export const wholeListOfSpaceItems: [IStar[], IGalaxy[], IGalaxy[]] = [
+export const starsList: IStar[] = [
+  {
+    id: 1,
+    name: "Sirius",
+    distance: "8.6 light-years",
+    mass: "2 solar masses(Sirius A), 1 solar masses(Sirius B)",
+    location: "The Milky Way Galaxy (Canis Major)",
+    description:
+      "Sirius, also called Alpha Canis Majoris or the Dog Star, brightest star in the night sky. It is a binary star in the constellation Canis Major. The bright component of the binary is a blue-white star 25.4 times as luminous as the Sun. It has a radius 1.71 times that of the Sun and a surface temperature of 9,940 kelvins (K), which is more than 4,000 K higher than that of the Sun.",
+    img: sirius,
+  },
+  {
+    id: 2,
+    name: "Canopus",
+    distance: "310 light-years",
+    mass: "8 solar masses",
+    location: "The Milky Way Galaxy (Carina)",
+    description:
+        "Canopus is the brightest star in the southern constellation of Carina and the second-brightest star in the night sky. It is also designated α Carinae",
+    img: canopus,
+  },
+  {
+    id: 3,
+    name: "Rigel Kentaurus",
+    distance: "4.3 light-years",
+    mass: "1.1 solar masses",
+    location: "The Milky Way Galaxy (Alpha Centauri)",
+    description:
+        "Rigel Kentaurus is the third-brightest star in the night sky. However, its brightness is due to the proximity of the system — commonly known as Alpha Centauri — which is the sun's closest neighbor. Rigel Kentaurus is part of a triple star system, and the naked-eye star itself is a double star.",
+    img: rigil,
+  },
+  {
+    id: 4,
+    name: "Vega",
+    distance: "25 light-years",
+    mass: "2.1 solar masses",
+    location: "The Milky Way Galaxy (Lyra)",
+    description:
+        "Vega is the brightest star in the northern constellation of Lyra.  Vega is surrounded by a disk of circumstellar dust that may be similar to the solar system’s Kuiper Belt.",
+    img: vega,
+  },
+  {
+    id: 5,
+    name: "Betelgeuse",
+    distance: "548 light-years",
+    mass: "16.5-19 solar masses",
+    location: "The Milky Way Galaxy (Orion)",
+    description:
+        "Betelgeuse is a red supergiant roughly 764 times as large as the Sun and one of the largest stars visible to the naked eye. The combination of size and temperature tells astronomers that the star is a kind of star called a red super giant. Red super giants are stars that are close to the end of their life. Probably within the next ten to hundred thousand years Betelgeuse might end its life in a supernova explosion.",
+    img: betelgeuse,
+  },
+  {
+    id: 6,
+    name: "Aldebaran",
+    distance: "65.3 light-years",
+    mass: "1.16 solar masses",
+    location: "The Milky Way Galaxy (Taurus)",
+    description: "Aldebaran is the brightest star in the zodiac constellation of Taurus. Aldebaran is a giant star that is cooler than the Sun with a surface temperature of 3,900 K, but its radius is about 44 times the Sun's, so it is over 400 times as luminous.",
+    img: aldebaran,
+  }
+];
+export const wholeListOfSpaceItems: [IStar[], IGalaxy[], IGalaxy[], IStar[]] = [
   blackHolesList,
   galaxiesList,
   nebulae,
+  starsList,
 ];
