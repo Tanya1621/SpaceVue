@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="stars__heading">Read more</h2>
+    <h2 class="stars__heading" id="read_more">Read more</h2>
     <ul class="stars__list">
       <GalleryItem
         v-for="star in stars"

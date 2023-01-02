@@ -6,7 +6,7 @@
     </div>
     <div class="gallery__capture">
       <p class="gallery__name">{{ item.name.toUpperCase() }}</p>
-      <button
+     <a href="#read_more"> <button
         v-if="isMain"
         :class="
           chosenItem === item.id
@@ -16,7 +16,7 @@
         @click="$emit('chooseItem', item.id)"
       >
         {{ chosenItem === item.id ? "&#10003;" : "+" }}
-      </button>
+      </button></a>
     </div>
   </li>
 </template>
